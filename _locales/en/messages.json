@@ -1,0 +1,8 @@
+{
+	"manifest_icon_default_title":{
+		"message":"Page Navigation Helper"
+	},
+	"manifest_app_description": {
+		"message": "A pagination navigation helper, which automatically recognizes(or allows geeks to point out) navigation components for various of websites and provides a shortcut(Alt+WheelLeft/WheelRight,or Alt+SwipeLeft/SwipeRight) for visitors to navigate to prev/next page quickly."
+	}
+}

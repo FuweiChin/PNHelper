@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=960, initial-scale=1"/>
+<title>PNHelper Options</title>
+<style>
+.form-group{
+	margin-bottom:0.5em;
+}
+.form-control-label{
+	display: inline-block;
+	width:120px;
+	text-align: right;
+}
+.table{
+	table-layout:fixed;
+	border-collapse:collapse;
+}
+.table>caption{
+	font-size:16px
+	font-style:italic;
+	text-align: left;
+	padding:0.5rem;
+}
+.table>thead{
+	background-color: #eeeeee;
+}
+.table>tfoot{
+	background-color: #eeeeee;
+}
+.table th,
+.table td{
+	padding:0.5rem;
+}
+
+.table-bordered th,
+.table-bordered td{
+	border:1px solid #a9a9a9;
+}
+.empty-placeholder{
+	color:#777777;
+	display:none;
+}
+tbody:empty+tfoot>.empty-placeholder{
+	display:table-row;
+}
+.table-rules{
+	width:100%;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>PNHelper Settings</h1>
+</div>
+	<table id="builtInRules" class="table table-bordered table-rules">
+	<caption>Built-in Rules</caption>
+	<thead>
+		<tr>
+			<th axis="host">Host</th>
+			<th axis="prev">Prev-link Query Selector</th>
+			<th axis="next">Next-link Query Selector</th>
+			<th axis="op">Actions</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+	<tfoot>
+		<tr class="empty-placeholder">
+			<td colspan="4">Empty</td>
+		</tr>
+	</tfoot>
+	</table>
+
+	<table id="userDefinedRules" class="table table-bordered table-rules">
+	<caption>User-defined Rules</caption>
+	<thead>
+		<tr>
+			<th axis="host">Host</th>
+			<th axis="prev">Prev-link Query Selector</th>
+			<th axis="next">Next-link Query Selector</th>
+			<th axis="op">Actions</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+	<tfoot>
+		<tr class="empty-placeholder">
+			<td colspan="4">Currently no rules, please add some.</td>
+		</tr>
+		<tr>
+			<td><input type="text" name="host" class="form-control" placeholder="*.example.com" required="required" maxlength="64" pattern="([a-z0-9-*]+)(\.[a-z0-9-*]+)+" /></td>
+			<td><input type="text" name="prev" class="form-control" placeholder="a[rel=&quot;prev&quot;]" required="required" maxlength="64" /></td>
+			<td><input type="text" name="next" class="form-control" placeholder="a[rel=&quot;next&quot;]" required="required" maxlength="64" /></td>
+			<td><button type="button" class="btn-add">Add</button></td>
+		</tr>
+	</tfoot>
+	</table>
+</div>
+
+<template id="builtInRuleTrTemplate"><tr data-disabled="false">
+	<td axis="host">*.example.com</td>
+	<td axis="prev">a[rel="prev"]</td>
+	<td axis="next">a[rel="next"]</td>
+	<td axis="op"><button type="button" class="btn-disable" style="visibility:hidden">Disable</button></td>
+</tr></template>
+
+<template id="userDefinedRuleTrTemplate"><tr>
+	<td axis="host">*.example.com</td>
+	<td axis="prev">a[rel="prev"]</td>
+	<td axis="next">a[rel="next"]</td>
+	<td axis="op"><button type="button" class="btn-delete">Delete</button></td>
+</tr></template>
+
+
+<script src="libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="options.js"></script>
+</body>
+</html>

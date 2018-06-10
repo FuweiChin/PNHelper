@@ -1,0 +1,43 @@
+[
+	{
+		"host": "*.taobao.com",
+		"prev": ".link[trace=srp_select_pagedown],.prev,.prev",
+		"next": ".link[trace=srp_select_pageup],.next"
+	},
+	{
+		"host": "*.tmall.com",
+		"prev": ".ui-page-prev,.prev",
+		"next": ".ui-page-next,.next"
+	},
+	{
+		"host": "www.amazon.com",
+		"prev": "a[href=\"#prev\"]",
+		"next": "a[href=\"#next\"]"
+	},
+	{
+		"host": "www.amazon.cn",
+		"prev": "#pagnPrevLink",
+		"next": "#pagnNextLink"
+	},
+	
+	{
+		"host": "www.google.com.*",
+		"prev": "#pnprev",
+		"next": "#pnnext"
+	},
+	{
+		"host": "www.baidu.com",
+		"prev": ".n:first-child",
+		"next": ".n:last-child"
+	},
+	{
+		"host": "*.bing.com",
+		"prev": ".sb_pagP",
+		"next": ".sb_pagN"
+	},
+	{
+		"host": "github.com",
+		"prev": ".prev_page",
+		"next": ".next_page"
+	}
+]

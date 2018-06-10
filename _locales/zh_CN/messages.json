@@ -1,0 +1,8 @@
+{
+	"manifest_icon_default_title":{
+		"message":"分页导航帮手"
+	},
+	"manifest_app_description": {
+		"message": "一个分页导航帮手，可自动识别（或让极客指明）各网站的分页组件，并提供一个统一的快捷键（默认Alt+鼠标中间左右拨，或Alt+触控板左右拂），使访问者能快速跳转到上一页、下一页。"
+	}
+}
