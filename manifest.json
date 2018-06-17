@@ -1,16 +1,13 @@
 {
 	"name": "PNHelper",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"manifest_version": 2,
 	"description": "__MSG_manifest_app_description__",
 	"default_locale": "en",
-	"minimum_chrome_version": "45.0.0",
 	"icons":{
 		"16":"pn.iconset/icon_16x16.png",
-		"24":"pn.iconset/icon_24x24.png",
-		"32":"pn.iconset/icon_32x32.png",
 		"48":"pn.iconset/icon_48x48.png",
-		"256":"pn.iconset/icon_256x256.png"
+		"128":"pn.iconset/icon_128x128.png"
 	},
 	"permissions":[ "storage" ],
 	"background": {
@@ -19,17 +16,17 @@
 	"content_scripts": [
 		{
 			"matches": [ "http://*/*", "https://*/*", "file://*/*" ],
-			"js": ["content_script.js"]
+			"js": ["content.js"]
 		}
 	],
 	"browser_action": {
 		"default_icon": "pn.iconset/icon_48x48.png",
 		"default_title": "__MSG_manifest_icon_default_title__"
 	},
-	"options_page": "options.html",
 	"options_ui": {
 		"open_in_tab": true,
 		"page": "options.html"
 	},
-	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';"
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
+	"minimum_chrome_version": "45"
 }
