@@ -1,7 +1,5 @@
 # PNHelper
-PNHelper for Chrome is a Chrome extension to enhance pagination navigation efficiency, which automatically recognizes(or allows geeks to point out) navigation components for various of websites and provides a shortcut(Alt+WheelLeft/WheelRight, or Alt+SwipeLeft/SwipeRight) for visitors to navigate to prev/next page quickly.
-
-The current version of PNHelper for Chrome is 0.2.0  
+PNHelper  is a browser extension to enhance pagination navigation efficiency, which automatically recognizes(or allows geeks to point out) navigation components for various of websites and provides a shortcut(Alt+WheelLeft/WheelRight, or Alt+SwipeLeft/SwipeRight) for visitors to navigate to prev/next page quickly.
 
 ## Features and Roadmap
 
@@ -12,16 +10,15 @@ The current version of PNHelper for Chrome is 0.2.0
 + [x] Provide a settings page for user to add/delete user-defined rules
 
 ### 0.3
-+ [ ] Allow users to change rules in the settings page
 + [ ] Allow users to update built-in rules from an online update site
 
 ### 1.0
 + [ ] Make PNHelper intelligently recognize navigation components for various of websites
 
 ## Installation
-1. Download PNHelper. e.g. "PNHelper-x.y.z.crx"
+1. Download PNHelper, e.g. "PNHelper-x.y.z.crx", or checkout this repository
 2. Rename "PNHelper-x.y.z.crx" to "PNHelper-x.y.z.zip", unzip it to a new folder "PNHelper-x.y.z"
-3. Nn chrome, navigate to [chrome://extensions/](Chrome Extensions) page, at Chrome Extensions page
+3. Open chrome, navigate to [chrome://extensions/](Chrome Extensions) page, at Chrome Extensions page
   1. Check "Developers Mode"
   2. Click "Load unpacked extension" and select the path to PNHelper-x.y.z. alternately, you can just drag the folder "PNHelper-x.y.z" then drop it to Chrome Extensions page
   3. If a new 'PN' icon appears on the top-right corner of Chrome window, then you may say: PNHelper have been installed successfully.

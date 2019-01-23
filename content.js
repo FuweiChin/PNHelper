@@ -1,4 +1,7 @@
 "use strict";
+
+if(!window.browser){window.browser=window.chrome;}
+
 var settings={
 	minInterval: 400,
 	supportsPassive: false,
@@ -32,18 +35,13 @@ function applyRule(rule){
 			}
 		}
 	},settings.supportsPassive&&{passive:true});
-	//console.debug("listen Alt+LeftWheel/RightWheel.");
 }
 
-chrome.storage.local.get(["rules"], function(result) {
-	//console.debug("final rules are",result.rules);
+browser.storage.local.get(["rules"],function(result) {
 	var host=location.host;
 	var rule=result.rules.find((rule)=>new RegExp("^"+rule.hostPattern+"$").test(host));
 	if(rule!=null){
-		//console.debug("rule for '"+host+"' is "+JSON.stringify(rule,["host","prev","next"]));
+		console.debug("rule for '"+host+"' is "+JSON.stringify(rule,["host","prev","next"]));
 		applyRule(rule);
-	}else{
-		//console.debug("no rule applicable for host '"+host+"'.");
 	}
-	//console.debug("chrome extension 'PNHelper' initialized.");
 });

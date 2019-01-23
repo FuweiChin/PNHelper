@@ -1,23 +1,24 @@
 "use strict";
+if(!window.browser){window.browser=window.chrome;}
 
 class DataService {
 	getBuiltInRules(){
-		return fetch(chrome.extension.getURL("rules.json")).then((response)=>response.json());
+		return fetch(browser.extension.getURL("rules.json")).then((response)=>response.json());
 	}
 	getBuiltInRuleStates(){
 		return new Promise((resolve)=>{
-			chrome.storage.sync.get(["builtInRuleStates"],(result)=>{resolve(result.builtInRuleStates||{});});
+			browser.storage.sync.get(["builtInRuleStates"],(result)=>{resolve(result.builtInRuleStates||{});});
 		});
 	}
 	getUserDefinedRules(){
 		return new Promise((resolve)=>{
-			chrome.storage.sync.get(["rules"],(result)=>{resolve(result.rules||[]);});
+			browser.storage.sync.get(["rules"],(result)=>{resolve(result.rules||[]);});
 		});
 	}
 	saveUserDefinedRules(rules){
 		console.debug("saving user-defined rules.");
 		return new Promise((resolve)=>{
-			chrome.storage.sync.set({rules:rules},function(){
+			browser.storage.sync.set({rules:rules},function(){
 				console.debug("user-defined rules saved");
 			});
 		});

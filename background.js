@@ -1,17 +1,19 @@
 "use strict";
 
+if(!window.browser){window.browser=window.chrome;}
+
 class DataService{
 	getBuiltInRules(){
-		return fetch(chrome.extension.getURL("rules.json")).then((response)=>response.json());
+		return fetch(browser.extension.getURL("rules.json")).then((response)=>response.json());
 	}
 	getBuiltInRuleStates(){
 		return new Promise((resolve)=>{
-			chrome.storage.sync.get(["builtInRuleStates"],(result)=>{resolve(result.builtInRuleStates||{});});
+			browser.storage.sync.get(["builtInRuleStates"],(result)=>{resolve(result.builtInRuleStates||{});});
 		});
 	}
 	getUserDefinedRules(){
 		return new Promise((resolve)=>{
-			chrome.storage.sync.get(["rules"],(result)=>{resolve(result.rules||[]);});
+			browser.storage.sync.get(["rules"],(result)=>{resolve(result.rules||[]);});
 		});
 	}
 	getFinalRules(){
@@ -28,7 +30,7 @@ var dataService=new DataService();
 console.debug("initializing final rules.");
 dataService.getFinalRules().then(initializeRules);
 
-chrome.storage.onChanged.addListener(function(changes, namespace){
+browser.storage.onChanged.addListener(function(changes, namespace){
 	if(namespace=="sync"){
 		for (var key in changes) {
 			var change = changes[key];
@@ -45,7 +47,7 @@ function initializeRules(values){
 	var userDefinedRules=values[1];
 	var rules=builtInRules.concat(userDefinedRules);
 	rules.forEach(dataService.processRule);
-	chrome.storage.local.set({rules:rules},()=>{
+	browser.storage.local.set({rules:rules},()=>{
 		//console.debug("final rules initialized.");
 	});
 }

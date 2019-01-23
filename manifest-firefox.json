@@ -1,6 +1,6 @@
 {
 	"name": "PNHelper",
-	"version": "0.2.2",
+	"version": "0.2.1",
 	"manifest_version": 2,
 	"description": "__MSG_manifest_app_description__",
 	"author": "Fuwei Chin",
@@ -12,8 +12,7 @@
 	},
 	"permissions":[ "storage" ],
 	"background": {
-		"scripts": [ "background.js" ],
-		"persistent": false
+		"scripts": [ "background.js" ]
 	},
 	"content_scripts": [
 		{
@@ -30,5 +29,10 @@
 		"open_in_tab": true
 	},
 	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
-	"minimum_chrome_version": "45"
+	"applications": {
+		"gecko": {
+			"id": "pnhelper@bldgos.net",
+			"strict_min_version": "42"
+		}
+	}
 }
